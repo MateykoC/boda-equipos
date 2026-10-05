@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestra Boda | Melina & Gabriel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #8a735c;
+      --bg-light: #fdfbf7;
+      --text: #2c2c2c;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+    body {
+      background-color: var(--bg-light);
+      color: var(--text);
+      text-align: center;
+      line-height: 1.6;
+      padding-bottom: 20px;
+    }
+    header {
+      margin-bottom: 30px;
+    }
+    .hero-photo {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      filter: grayscale(100%);
+      display: block;
+    }
+    .header-content {
+      padding-top: 25px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      color: var(--primary);
+      margin: 10px 0;
+      font-weight: normal;
+    }
+    /* Clase especial para la & para que no parezca una E */
+    .ampersand {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7em;
+      font-weight: 300;
+      margin: 0 5px;
+    }
+    .date-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 25px 10px 40px;
+    }
+    .time-box {
+      background: #fff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      min-width: 65px;
+    }
+    .time-box span {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+    .card {
+      background: #fff;
+      max-width: 500px;
+      margin: 0 auto 25px;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .card h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-weight: normal;
+    }
+    .btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: #fff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 25px;
+      margin-top: 15px;
+      font-weight: 600;
+      transition: background 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+    .note {
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 10px;
+      font-style: italic;
+    }
+    form input, form select {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background-color: #fff;
+    }
+    footer {
+      padding: 30px;
+      font-size: 0.85rem;
+      color: #888;
+    }
+    .icon-svg {
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 12px;
+      color: var(--primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .icon-svg svg {
+      width: 100%;
+      height: 100%;
+    }
+    .moon-icon {
+      color: var(--primary); /* Color principal marroncito para la luna */
+    }
+    .transfer-box .row {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+    }
+    .copy-btn {
+      margin-top: 12px;
+    }
+    .copy-btn.copied {
+      background-color: #6b7a5e;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="foto.jpeg" alt="Melina y Gabriel" class="hero-photo">
+    
+    <div class="header-content">
+      <p class="subtitle">¡Nos Casamos!</p>
+      <h1>Melina <span class="ampersand">&</span> Gabriel</h1>
+      <p class="date-title">02 de Abril de 2027</p>
+    </div>
+  </header>
+
+  <div class="countdown">
+    <div class="time-box"><span id="days">0</span>Días</div>
+    <div class="time-box"><span id="hours">0</span>Hs</div>
+    <div class="time-box"><span id="minutes">0</span>Min</div>
+    <div class="time-box"><span id="seconds">0</span>Seg</div>
+  </div>
+
+  <!-- Ceremonia Religiosa -->
+  <div class="card">
+    <div class="icon-svg">
+      <svg viewBox="0 0 64 64" fill="none">
+        <path d="M32 6V18M26 12H38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M32 18L14 30V56H50V30L32 18Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M26 56V42C26 38.6863 28.6863 36 32 36C35.3137 36 38 38.6863 38 42V56" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <circle cx="32" cy="28" r="4" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M8 56H56" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <h2>Ceremonia Religiosa</h2>
+    <p><strong>Parroquia Nuestra Señora de Lourdes</strong></p>
+    <p><strong>Hora:</strong> 19:30 hs</p>
+    <a href="https://maps.app.goo.gl/qFubYd1baecdgXVA8" target="_blank" class="btn">Ver en Google Maps</a>
+  </div>
+
+  <!-- Civil -->
+  <div class="card">
+    <div class="icon-svg">
+      <svg viewBox="0 0 64 64" fill="none">
+        <path d="M8 14C8 14 18 10 32 16C46 10 56 14 56 14V50C56 50 46 46 32 52C18 46 8 50 8 50V14Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M32 16V52" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M14 22C20 20 26 21 28 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M14 30C20 28 26 29 28 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M14 38C20 36 26 37 28 38" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M36 22C38 21 44 20 50 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M36 30C38 29 44 28 50 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M36 38C38 37 44 36 50 38" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <h2>Civil</h2>
+    <p><strong>Salón de Eventos La Legua</strong></p>
+    <p><strong>Hora:</strong> 21:30 hs</p>
+    <a href="https://maps.app.goo.gl/UwrcN4AB2QFfQaxr6" target="_blank" class="btn">Ver en Google Maps</a>
+  </div>
+
+  <!-- Dress Code -->
+  <div class="card">
+    <h2>Dress Code</h2>
+    <p><strong>Elegante</strong></p>
+    <p>Queremos que te veas increíble para festejar juntos.</p>
+    <p style="margin-top: 10px;"><em>Les pedimos a las invitadas evitar colores claros.</em></p>
+  </div>
+
+  <!-- Confirmación de Asistencia -->
+  <div class="card">
+    <h2>Confirmación de Asistencia</h2>
+    <p class="note" style="margin-bottom: 15px; font-weight: 600;">Por favor, enviar una confirmación por persona.</p>
+    <form id="rsvpForm">
+      <input type="text" id="nombre" placeholder="Nombre y Apellido" required>
+      
+      <select id="asistencia" required>
+        <option value="Sí, asistiré" selected>Sí, asistiré</option>
+        <option value="No podré asistir">No podré asistir</option>
+      </select>
+
+      <select id="edad" required>
+        <option value="Adulto" selected>Adulto</option>
+        <option value="Entre 3 y 11 años inclusive">Entre 3 y 11 años inclusive</option>
+        <option value="Menor de 3 años">Menor de 3 años</option>
+      </select>
+
+      <input type="text" id="menu" placeholder="Restricción alimentaria (Celiaco, vegetariano, etc.)">
+      <button type="submit" class="btn">Confirmar asistencia</button>
+      <p class="note" id="rsvpStatus"></p>
+    </form>
+  </div>
+
+  <!-- Regalo / Luna de Miel -->
+  <div class="card">
+    <div class="icon-svg moon-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </div>
+    <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 10px;">¡Compartir con ustedes esta noche es el mejor de los regalos!</p>
+    <p>Pero si desean hacernos un presente, pueden ayudarnos con nuestra luna de miel.</p>
+  </div>
+
+  <footer>
+    ¡Nos vemos pronto!
+  </footer>
+
+  <script>
+    const weddingDate = new Date("April 2, 2027 19:30:00").getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const dist = weddingDate - now;
+
+      if (dist > 0) {
+        document.getElementById("days").innerText = Math.floor(dist / (1000 * 60 * 60 * 24));
+        document.getElementById("hours").innerText = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById("minutes").innerText = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById("seconds").innerText = Math.floor((dist % (1000 * 60)) / 1000);
+      } else {
+        clearInterval(timer);
+      }
+    }, 1000);
+
+    // VARIABLES A REEMPLAZAR CON TU NUEVO FORMULARIO:
+    const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/1bFCUOYL3Y8avWq-ai41sdfKkwfG93MMxuxlMkNSBb5Y/formResponse";
+    const ENTRY_NOMBRE = "entry.1682893191";
+    const ENTRY_ASISTENCIA = "entry.1606878947";
+    const ENTRY_EDAD = "entry.1004630562";
+    const ENTRY_MENU = "entry.306261522";
+
+    document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      const asistencia = document.getElementById('asistencia').value;
+      const edad = document.getElementById('edad').value;
+      const menu = document.getElementById('menu').value;
+      const statusEl = document.getElementById('rsvpStatus');
+
+      const formData = new FormData();
+      formData.append(ENTRY_NOMBRE, nombre);
+      formData.append(ENTRY_ASISTENCIA, asistencia);
+      formData.append(ENTRY_EDAD, edad);
+      formData.append(ENTRY_MENU, menu);
+
+      fetch(GOOGLE_FORM_ACTION_URL, { method: "POST", mode: "no-cors", body: formData })
+        .then(() => {
+          statusEl.textContent = "¡Gracias! Tu respuesta fue enviada.";
+          document.getElementById('rsvpForm').reset();
+          document.getElementById('asistencia').value = "Sí, asistiré";
+          document.getElementById('edad').value = "Adulto";
+        })
+        .catch(() => {
+          statusEl.textContent = "Hubo un problema, probá de nuevo más tarde.";
+        });
+    });
+  </script>
+
+</body>
+</html>
